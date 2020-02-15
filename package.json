@@ -1,0 +1,33 @@
+{
+  "name": "node-micro-service",
+  "version": "1.0.0",
+  "description": "An example dockerized node application.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon -r dotenv/config .",
+    "build": "docker build .",
+    "start": "docker-compose up --build -d",
+    "stop": "docker-compose down",
+    "db:start": "docker-compose up --build -d postgres",
+    "db:shell": "docker-compose exec postgres psql -U admin example"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "pg": "^7.18.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thebearingedge/node-micro-service.git"
+  },
+  "bugs": {
+    "url": "https://github.com/thebearingedge/node-micro-service/issues"
+  },
+  "homepage": "https://github.com/thebearingedge/node-micro-service#readme"
+}

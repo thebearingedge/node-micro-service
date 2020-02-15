@@ -1,0 +1,19 @@
+version: '3.7'
+
+services:
+  app:
+    build: .
+    ports:
+      - 3000:3000
+    depends_on:
+      - postgres
+    environment:
+      - DATABASE_URL=postgres://admin:password@postgres/example
+  postgres:
+    image: postgres:10-alpine
+    environment:
+      - POSTGRES_DB=example
+      - POSTGRES_USER=admin
+      - POSTGRES_PASSWORD=password
+    ports:
+      - 5432:5432
